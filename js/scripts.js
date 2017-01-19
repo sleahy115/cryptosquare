@@ -1,4 +1,4 @@
-var answer = [];
+var answerr = [];
 var inputValue;
 
 function encode(letters){
@@ -26,10 +26,16 @@ function encode(letters){
 
   for(i=0;i<width;i++){
     for (j=i; j<lngth; j+=width){
-      answer.push(splt[j]);
+      answerr.push(splt[j]);
       console.log("The letter in this loop is: " + splt[j]);
     }
   }
+
+  for(k=5; k<answerr.length; k+=6){
+    answerr.splice(k,0," ");
+  }
+  answerr = answerr.join("");
+
 }
 
 
@@ -41,8 +47,8 @@ $(document).ready(function(){
    $("#output").empty();
    inputValue = $("input#tbox").val()
    encode(inputValue);
-   $("#output").append("<p>" + answer + "</p>");
-   answer = ""
+   $("#output").append("<p>" + answerr + "</p>");
+   answerr = [];
 
  });
 });
